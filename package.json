@@ -1,0 +1,27 @@
+{
+  "name": "doppler-e2e-tests",
+  "version": "1.0.0",
+  "description": "Enterprise-grade E2E test automation framework built with Playwright and TypeScript for Doppler web application",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:mobile": "playwright test --project=\"Mobile Chrome\"",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.1",
+    "dotenv": "^16.4.7",
+    "typescript": "^5.7.3"
+  }
+}
