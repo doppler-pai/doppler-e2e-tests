@@ -1,3 +1,5 @@
 export { BaseTestFixtures } from './baseTest';
-export { test, expect, AuthTestFixtures } from './authFixtures';
+export { AuthTestFixtures } from './authFixtures';
+export { test, expect, AppTestFixtures } from './appFixtures';
 export * from './data/authData';
+export * from './data/setsData';
