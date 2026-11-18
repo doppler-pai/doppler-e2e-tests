@@ -28,7 +28,7 @@ export class RegisterPage extends BasePage {
 
     this.heading = page.getByRole('heading', { name: /create account/i });
     this.description = page.getByText(/sign up with your email and password to start using doppler/i);
-    this.logoImage = page.getByRole('img', { name: 'Doppler' });
+    this.logoImage = page.getByRole('main').getByRole('img', { name: 'Doppler' });
     this.emailInput = page.getByLabel(/^email/i);
     this.passwordInput = page.getByLabel(/^password$/i);
     this.confirmPasswordInput = page.getByLabel(/confirm password/i);

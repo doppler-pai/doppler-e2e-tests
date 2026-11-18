@@ -25,7 +25,7 @@ export class LoginPage extends BasePage {
 
     this.heading = page.getByRole('heading', { name: /sign in/i });
     this.description = page.getByText(/use your email and password to access your doppler account/i);
-    this.logoImage = page.getByRole('img', { name: 'Doppler' });
+    this.logoImage = page.getByRole('main').getByRole('img', { name: 'Doppler' });
     this.emailInput = page.getByLabel(/^email/i);
     this.passwordInput = page.getByLabel(/^password/i);
     this.submitButton = page.getByRole('button', { name: /sign in/i });

@@ -18,7 +18,7 @@ export class PlayPage extends BasePage {
   constructor(page: Page) {
     super(page);
 
-    this.logoImage = page.getByRole('img', { name: 'Doppler' });
+    this.logoImage = page.getByRole('main').getByRole('img', { name: 'Doppler' });
     this.gameIdLabel = page.getByText(/game id/i);
     // Targets the InputOTP hidden or text input
     this.gameIdInput = page.locator('input[autocomplete="one-time-code"], input[data-input-otp="true"], form input').first();

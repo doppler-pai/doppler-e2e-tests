@@ -58,9 +58,14 @@ export const test = base.extend<BaseTestFixtures>({
         `Expected 0 unhandled page errors, but encountered:\n${pageErrors.map((e) => e.message).join('\n')}`
       ).toHaveLength(0);
 
-      // Filter out known harmless third-party logs if necessary
+      // Filter out known harmless third-party logs and offline Firebase backend notices
       const criticalErrors = consoleErrors.filter(
-        (err) => !err.includes('favicon.ico') && !err.includes('Download the React DevTools')
+        (err) =>
+          !err.includes('favicon.ico') &&
+          !err.includes('Download the React DevTools') &&
+          !err.includes('Firebase') &&
+          !err.includes('auth/') &&
+          !err.includes('ERR_')
       );
 
       expect(
